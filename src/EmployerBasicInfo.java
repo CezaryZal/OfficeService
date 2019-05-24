@@ -1,17 +1,13 @@
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 public class EmployerBasicInfo  {
 
-    private final int ID_EMPLOYER;
+    private int id;
     private String lastName;
     private String firstName;
-    SimpleDateFormat formatDate = new SimpleDateFormat("E yyyy.MM.dd");
-    private final Date DATA_EMPLOYMENT;
-    //exp. 190 + 113 = `2013, Calendar.MAY, 13`
+    private Date dateOfEmployment;
     private char sex;
-    private String numberOfDepartment;
+    private int numberDepartment;
     private String nameDepartment;
     private String position;
     private int numberPhone;
@@ -19,15 +15,15 @@ public class EmployerBasicInfo  {
     private String supervisor;
     private String hobby;
 
-    public EmployerBasicInfo(int ID_EMPLOYER , String lastName, String firstName, Date DATA_EMPLOYMENT) {
-        this.ID_EMPLOYER = ID_EMPLOYER;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.DATA_EMPLOYMENT = DATA_EMPLOYMENT;
+    public EmployerBasicInfo (){
     }
 
-    public int getID_EMPLOYER (){
-        return ID_EMPLOYER;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getLastName() {
@@ -46,8 +42,12 @@ public class EmployerBasicInfo  {
         this.firstName = firstName;
     }
 
-    public Date getDATA_EMPLOYMENT() {
-        return DATA_EMPLOYMENT;
+    public Date getDateOfEmployment() {
+        return dateOfEmployment;
+    }
+
+    public void setDateOfEmployment(Date dateOfEmployment) {
+        this.dateOfEmployment = dateOfEmployment;
     }
 
     public char getSex() {
@@ -58,12 +58,12 @@ public class EmployerBasicInfo  {
         this.sex = sex;
     }
 
-    public String getNumberOfDepartment() {
-        return numberOfDepartment;
+    public int getNumberDepartment() {
+        return numberDepartment;
     }
 
-    public void setNumberOfDepartment(String numberOfDepartment) {
-        this.numberOfDepartment = numberOfDepartment;
+    public void setNumberDepartment(int numberDepartment) {
+        this.numberDepartment = numberDepartment;
     }
 
     public String getNameDepartment() {
