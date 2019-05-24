@@ -1,15 +1,20 @@
 public interface HeadersAnswers {
 
-    String headerToListEmployments = "Lista wszystkich dostępnych pracowników: \n";
+    String headerEmploymentsBasicInfo = "Lista wszystkich pracowników: \n";
 
-    String headerToListEmploymentsShortData = "Lista wszystkich dostępnych pracowników wraz z ich podstawowymi danymi.\n";
+    String headerEmploymentsShortData = "Lista wszystkich dostępnych pracowników, zapis skrócony:\n";
 
-    String headerToListEmploymentsShortDataAndDateEmployment =
-            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz date zatrudnienia.\n";
+    String headerEmploymentsShortDataAndDateEmployment =
+            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz date zatrudnienia:\n";
 
-    String headerToListEmploymentsShortDataAndSex =
-            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz płeć.\n";
+    String headerEmploymentsShortDataAndSex =
+            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz płeć:\n";
 
-    String headerToListEmploymentsShortDataAndNumberDepartment =
-            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz numere identyfikacyjny dział.\n";
+    String headerEmploymentsShortDataAndNumberDepartment =
+            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz numere identyfikacyjny dział:\n";
+
+    String headerAfterCreateNewEmployer = "Pracownik o podanych parametrach został dodany.\n";
+
+    String headerAfterDeleteEmployer = "Pracownik został usunięty.\n";
+
 }
