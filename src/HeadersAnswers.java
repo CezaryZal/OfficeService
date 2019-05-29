@@ -1,20 +1,42 @@
-public interface HeadersAnswers {
+public class HeadersAnswers {
 
-    String headerEmploymentsBasicInfo = "Lista wszystkich pracowników: \n";
+    public String getHeaderEmployeesBasicInfo() {
+        return "Lista wszystkich pracowników: \n";
+    }
 
-    String headerEmploymentsShortData = "Lista wszystkich dostępnych pracowników, zapis skrócony:\n";
+    public String getHeaderEmployeesShortData() {
+        return "Lista wszystkich dostępnych pracowników, zapis skrócony:\n";
+    }
 
-    String headerEmploymentsShortDataAndDateEmployment =
-            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz date zatrudnienia:\n";
+    public String getHeaderEmployeesShortDataAndDateEmployment() {
+        return "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz date zatrudnienia:\n";
+    }
 
-    String headerEmploymentsShortDataAndSex =
-            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz płeć:\n";
+    public String getHeaderEmployeesShortDataAndSex() {
+        return "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz płeć:\n";
+    }
 
-    String headerEmploymentsShortDataAndNumberDepartment =
-            "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz numere identyfikacyjny dział:\n";
+    public String getHeaderEmployeesShortDataAndNumberDepartment() {
+        return "Lista wszystkich dostępnych pracowników. Numer id, imię nazwisko oraz numere identyfikacyjny dział:\n";
+    }
 
-    String headerAfterCreateNewEmployer = "Pracownik o podanych parametrach został dodany.\n";
+    public String getHeaderAfterCreateNewEmployee() {
+        return "Pracownik o podanych parametrach został dodany.\n";
+    }
 
-    String headerAfterDeleteEmployer = "Pracownik został usunięty.\n";
+    public String getHeaderAfterDeleteEmployee() {
+        return "Pracownik został usunięty.\n";
+    }
 
+    public String getHeaderAfterUpdateEmployee () {
+        return "Dane zostały zmienione.\n";
+    }
+
+    public String getHeaderAfterDisplaySpecificInfo (){
+        return "Pracownicy odpowiadający wpisanym atrybutom wyszukiwania: \n";
+    }
+
+    public String getHeaderToBackLastWindow () {
+        return "Aby wrócić do poprzedniego okna, należy wpisać słowo \"back\"\n";
+    }
 }
