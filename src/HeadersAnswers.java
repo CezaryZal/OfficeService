@@ -32,7 +32,7 @@ public class HeadersAnswers {
         return "Dane zostały zmienione.\n";
     }
 
-    public String getHeaderAfterDisplaySpecificInfo (){
+    public String getHeaderAfterDisplayAllEmployeesByAttribute (){
         return "Pracownicy odpowiadający wpisanym atrybutom wyszukiwania: \n";
     }
 
