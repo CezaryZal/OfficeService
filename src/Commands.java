@@ -1,68 +1,114 @@
 
-public class Commands implements HeadersQuestions, HeadersAnswers{
+public class Commands {
 
     private Screen screen = new Screen();
-    private AnswersForConsole answersForConsole = new AnswersForConsole();
-    private EmployerBasicInfoEditor employerEditor = new EmployerBasicInfoEditor();
+    private EmployeeBasicInfoFullAnswers EBIFullAnswers = new EmployeeBasicInfoFullAnswers();
+    private EmployeeBasicInfoEditor employeeEditor = new EmployeeBasicInfoEditor();
+    private EmployeeBasicInfoDAO EBIDAO = new EmployeeBasicInfoDAO();
+    private HeadersAnswers headersAnswers = new HeadersAnswers();
+    private HeadersQuestions headersQuestions = new HeadersQuestions();
+
 
 
     public void displayMainMenu (){
-        screen.printText(mainManu);
+        screen.printText(headersQuestions.getMainManu());
     }
 
-    public void displayBasicInfoAboutAllEmployments() {
-        screen.printText(answersForConsole.makeBasicInfoAboutAllEmployment());
+    public void displayBasicInfoAboutAllEmployees() {
+        screen.printText(EBIFullAnswers.createStringAllEmployees());
     }
 
-    public void displayOptionForSelectDetailsData (){
-        screen.printText(optionForSelectDetailsData);
+    public void displayOptionToSelectDetailsData (){
+        screen.printText(headersQuestions.getOptionToSelectDetailsData());
     }
 
-    public void displayOptionForSelectCategoryData (){
-        screen.printText(optionForSelectCategoryData);
+    public void displayOptionToSelectCategoryData (){
+        screen.printText(headersQuestions.getOptionToSelectCategoryData());
     }
 
-    public void displayAnswerEmploymentsShortDataAndChooseType (String numberAnswer){
-        screen.printText(answersForConsole.makeEmploymentsShortDataAndChooseType(Integer.valueOf(numberAnswer)));
+    public void displayAnswerEmployeesShortDataAndChooseType (String numberAnswer){
+        screen.printText(EBIFullAnswers.createStringEmployeesShortDataAndSelectType(Integer.valueOf(numberAnswer)));
     }
 
-    public void displayBasicInfoAboutEmployerById (String idEmployer){
-        screen.printText(answersForConsole.makeBasicInfoAboutEmployerById(Integer.valueOf(idEmployer)));
+    public void displayBasicInfoAboutEmployeeById (String idEmployer){
+        screen.printText(EBIFullAnswers.createStringEmployerById(Integer.valueOf(idEmployer)));
     }
 
-    public void displayHeaderToCreateNewEmployer () {
-        screen.printText(headerToCreateNewEmployer);
+    public void displayOptionToSelectCategoryToDisplaySpecificInfo () {
+        screen.printText(headersQuestions.getOptionToSelectCategoryToDisplaySpecificInfo());
     }
 
-    public void sentAnswersToCreateNewEmployer (String answer) {
-        EmployerBasicInfo employer = employerEditor.createNewEmployer(answer);
-        employerEditor.insertNewEmployer(employer);
-        screen.printText(headerAfterCreateNewEmployer);
+    public void setCategoryToDisplaySpecificInfo (String answer) {
+        EBIFullAnswers.setNumberOfCategoryToDisplaySpecificInfo(Integer.valueOf(answer));
     }
 
-    public void displayHeaderToDeleteEmployer (){
-        screen.printText(headerToDeleteEmployer);
-        screen.printText(answersForConsole.makeListEmploymentsShortData());
+    public void displayHeaderToSelectSpecificInfoFromEBI () {
+        screen.printText(headersQuestions.getHeaderToSelectSpecificInfoFromEBI());
     }
 
-    public void sentCommandToDeleteEmployer (String answer){
-        employerEditor.deleteEmployerById(Integer.valueOf(answer));
-        screen.printText(headerAfterDeleteEmployer);
+    public void displayAllEmployeesByAttribute(String attribute){
+        screen.printText(EBIFullAnswers.createStringAllEmployeesByAttribute(attribute));
+    }
+
+    public void displayHeaderToCreateNewEmployee () {
+        screen.printText(headersQuestions.getHeaderCreateNewEmployee());
+    }
+
+    public void setAnswersToCreateNewEmployee (String answer) {
+        EBIDAO.insertNewEmployee(employeeEditor.createNewEmployee(answer));
+        screen.printText(headersAnswers.getHeaderAfterCreateNewEmployee());
+    }
+
+    public void displayHeaderToDeleteEmployee (){
+        screen.printText(headersQuestions.getHeaderDeleteEmployee());
+        screen.printText(EBIFullAnswers.createStringAllEmployeesShortData());
+    }
+
+    public void setCommandToDeleteEmployee (String answer){
+        EBIDAO.deleteEmployeeById(Integer.valueOf(answer));
+        screen.printText(headersAnswers.getHeaderAfterDeleteEmployee());
+    }
+
+    public void displayHeaderToSelectEmployeeToUpdateEBI () {
+        screen.printText(headersQuestions.getHeaderUpdateEBI());
+        screen.printText(EBIFullAnswers.createStringAllEmployeesShortData());
+    }
+
+    public void setIdToUpdateEmployeeFromEBI (String answer){
+        employeeEditor.setTmpIdEmployee(Integer.valueOf(answer));
+    }
+
+    public void displayOprionToSelectCategoryToUpdateEBI (){
+        screen.printText(headersQuestions.getOptionToSelectCategoryToUpdateEBI());
+    }
+
+    public void setCategoryToUpdateEBI (String answer){
+        employeeEditor.setNumberOfCategoryToUpdate(Integer.valueOf(answer));
+    }
+
+    public void displayOptionToUpdateEBIFromCategory () {
+        screen.printText(headersQuestions.getOptionToUpdateEBIFromCategory());
+    }
+
+    public void setNewDataAndUpdateEBI (String newData){
+        employeeEditor.prepareUpdateEmployee(newData);
+    }
+
+    public void displayHeaderAfterUpdateEmployee () {
+        screen.printText(headersAnswers.getHeaderAfterUpdateEmployee());
     }
 
 
-
-
-
-
-
+    public void displayHeaderToBackLastWindow () {
+        screen.printText(headersAnswers.getHeaderToBackLastWindow());
+    }
 
     public void displayListEmploymentsShortData(){
-        screen.printText(answersForConsole.makeListEmploymentsShortData());
-        screen.printText(optionForSelectEmployer);
+        screen.printText(EBIFullAnswers.createStringAllEmployeesShortData());
+        screen.printText(headersQuestions.getOptionToSelectEmployee());
     }
 
     public void displayFarewellText (){
-        screen.printText(farewellText);
+        screen.printText(headersQuestions.getFarewellText());
     }
 }
