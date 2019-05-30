@@ -2,13 +2,13 @@ public class EmployerPrivateInfo {
 
     private final int ID_EMPLOYER;
     private float salary;
+    //zmiana typu na walutowe zobaczymy później
     private int age;
-    private long bankAccountNumber;
+    private String bankAccountNumber;
     private int ratingWork;
     private String mainResponsibility;
     private int vacationDays;
     private int currentUnUsedVacationDays;
-
     //maybe add benfits (new classes)
 
 
@@ -16,7 +16,7 @@ public class EmployerPrivateInfo {
         this.ID_EMPLOYER = ID_EMPLOYER;
     }
 
-    public int getID_EMPLOYER() {
+    public int getIdEmployee() {
         return ID_EMPLOYER;
     }
 
@@ -36,11 +36,11 @@ public class EmployerPrivateInfo {
         this.age = age;
     }
 
-    public long getBankAccountNumber() {
+    public String getBankAccountNumber() {
         return bankAccountNumber;
     }
 
-    public void setBankAccountNumber(long bankAccountNumber) {
+    public void setBankAccountNumber(String bankAccountNumber) {
         this.bankAccountNumber = bankAccountNumber;
     }
 
