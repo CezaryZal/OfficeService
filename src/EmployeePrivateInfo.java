@@ -1,30 +1,36 @@
-public class EmployerPrivateInfo {
+import java.math.BigDecimal;
 
-    private final int ID_EMPLOYER;
-    private float salary;
-    //zmiana typu na walutowe zobaczymy później
+public class EmployeePrivateInfo {
+
+    private final int IDEPI;
+    private final int ID_EMPLOYEE;
+    private BigDecimal salary;
     private int age;
     private String bankAccountNumber;
     private int ratingWork;
     private String mainResponsibility;
     private int vacationDays;
-    private int currentUnUsedVacationDays;
-    //maybe add benfits (new classes)
+    private int currentUnusedVacationDays;
+    //maybe add benfits (new classe)
 
+    public EmployeePrivateInfo(int idEmployee, int idEPI) {
+        this.ID_EMPLOYEE = idEmployee;
+        this.IDEPI = idEPI;
+    }
 
-    public EmployerPrivateInfo(int ID_EMPLOYER) {
-        this.ID_EMPLOYER = ID_EMPLOYER;
+    public int getidEPI() {
+        return IDEPI;
     }
 
     public int getIdEmployee() {
-        return ID_EMPLOYER;
+        return ID_EMPLOYEE;
     }
 
-    public float getSalary() {
+    public BigDecimal getSalary() {
         return salary;
     }
 
-    public void setSalary(float salary) {
+    public void setSalary(BigDecimal salary) {
         this.salary = salary;
     }
 
@@ -48,8 +54,12 @@ public class EmployerPrivateInfo {
         return ratingWork;
     }
 
-    public void setRatingWork(int ratingWork) {
+    public boolean setRatingWork(int ratingWork) {
+        if (ratingWork > 10 || ratingWork < 1){
+            return false;
+        }
         this.ratingWork = ratingWork;
+        return true;
     }
 
     public String getMainResponsibility() {
@@ -68,11 +78,25 @@ public class EmployerPrivateInfo {
         this.vacationDays = vacationDays;
     }
 
-    public int getCurrentUnUsedVacationDays() {
-        return currentUnUsedVacationDays;
+    public int getCurrentUnusedVacationDays() {
+        return currentUnusedVacationDays;
     }
 
-    public void setCurrentUnUsedVacationDays(int currentUnUsedVacationDays) {
-        this.currentUnUsedVacationDays = currentUnUsedVacationDays;
+    public void setCurrentUnusedVacationDays(int currentUnusedVacationDays) {
+        this.currentUnusedVacationDays = currentUnusedVacationDays;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee private info{" +
+                "id empolyee=" + ID_EMPLOYEE +
+                ", salary=" + salary +
+                ", age=" + age +
+                ", bank account number='" + bankAccountNumber + '\'' +
+                ", rating work=" + ratingWork +
+                ", main responsibility='" + mainResponsibility + '\'' +
+                ", vacation days=" + vacationDays +
+                ", current unused vacation days=" + currentUnusedVacationDays +
+                '}';
     }
 }
